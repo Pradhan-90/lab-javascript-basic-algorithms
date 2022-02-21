@@ -50,3 +50,27 @@ console.log(paragraphsSubstring.length);
 
 const paragraphsNumberOfEt = paragraphs.split(" et ");
 console.log(paragraphsNumberOfEt.length - 1);
+
+const phraseToCheck = "Ai lati d'Italia";
+
+let phraseToCheckCleaned = "";
+let reversePhraseToCheckCleaned = "";
+
+for (i = 0; i < phraseToCheck.length; i++) {
+  // clean spaces and apostrophe
+  if (phraseToCheck[i] !== " " && phraseToCheck[i] !== "'") {
+    phraseToCheckCleaned = `${phraseToCheckCleaned}${phraseToCheck[
+      i
+    ].toUpperCase()}`;
+  }
+}
+console.log(phraseToCheckCleaned);
+for (i = phraseToCheckCleaned.length - 1; i >= 0; i--) {
+  reversePhraseToCheckCleaned = `${reversePhraseToCheckCleaned}${phraseToCheckCleaned[i]}`;
+}
+console.log(reversePhraseToCheckCleaned);
+if (phraseToCheckCleaned === reversePhraseToCheckCleaned) {
+  console.log(`"${phraseToCheck}" is a Palindrome!`);
+} else {
+  console.log(`"${phraseToCheck}" is not a Palindrome!`);
+}
